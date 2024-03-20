@@ -10,7 +10,8 @@ import java.util.Properties;
 public class loadProperties{
 	
 	public static String getProperties(String key) throws Throwable {
-        FileInputStream fileInputStream = new FileInputStream("C:\\Users\\aswin.moorthy\\Automation\\pharma_NLP\\config.properties");
+		String userDirectory = System.getProperty("user.dir");
+        FileInputStream fileInputStream = new FileInputStream(userDirectory+"//config.properties");
         Properties properties = new Properties();
         properties.load(fileInputStream);
         return properties.getProperty(key);

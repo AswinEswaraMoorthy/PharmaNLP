@@ -1,27 +1,17 @@
 package com.utils;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
-
-import javax.swing.event.CellEditorListener;
-
 import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.ss.usermodel.WorkbookFactory;
-import org.apache.poi.xssf.usermodel.XSSFCell;
-import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.openxmlformats.schemas.spreadsheetml.x2006.main.CTRow;
+
 
 public class ExcelReader {
 
 	public Object[][] getTestData() throws IOException {
-		XSSFWorkbook workbook = new XSSFWorkbook("C:\\Users\\aswin.moorthy\\Automation\\pharma_NLP\\src\\test\\resources\\testdatas\\TestData.xlsx");
+		String userDirectory = System.getProperty("user.dir");
+		XSSFWorkbook workbook = new XSSFWorkbook(userDirectory+"//src//test//resources//testdatas//TestData.xlsx");
 		XSSFSheet sheet = workbook.getSheet("Sheet1");
 
 		int rowCount = sheet.getLastRowNum();
