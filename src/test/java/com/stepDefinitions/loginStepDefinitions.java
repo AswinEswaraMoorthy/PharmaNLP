@@ -30,9 +30,12 @@ public class loginStepDefinitions extends Baseclass {
 		String username = (String) objectArray[0][0];
 		String password = (String) objectArray[0][1];
 
+		System.out.println("&&&&&&&&&&&&&&&&&&&&"+username);
+		System.out.println("&&&&&&&&&&&&&&&&&&&&"+password);
 		login.getUsername().sendKeys(username);
 		login.getPassword().sendKeys(password);
 		login.getLoginbtn().click();
+		
 		takeScreenshot();
 
 	}
